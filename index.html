@@ -21,6 +21,8 @@
     
          <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
          <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+        
+        
     </head>
 
     <body>
@@ -44,9 +46,9 @@
                                             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bourse</a>
                                             
                                     <ul class="collapse list-unstyled" id="homeSubmenu">
-                                        <li><a href="#">céréale</a></li>
-                                        <li><a href="#">bétail</a></li>
-                                        <li><a href="#">pétrole</a></li>
+                                        <li><a href="">Céréale</a></li>
+                                        <li><a href="#">Bétail</a></li>
+                                        <li><a href="#">Gasoil</a></li>
                                     </ul>
                                         </li>  
                                     
@@ -58,9 +60,9 @@
                                             <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">trésorie</a>
                                             
                                             <ul class="collapse list-unstyled" id="homeSubmenu1">
-                                                <li><a href="#">hebdomadaire</a></li>
-                                                <li><a href="#">mensuelle</a></li>
-                                                <li><a href="#">annuelle</a></li>
+                                                <li><a href="#">Journalier</a></li>
+                                                <li><a href="#">Mensuelle</a></li>
+                                                <li><a href="#">Annuelle</a></li>
                                             </ul>
                                         </li>
                             
@@ -73,56 +75,79 @@
                     </div>
                 </div>
                 
-                <div class="col-md-8">
-                    
-                        
-                      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-                    
+                <div class="col-md-7">
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
                     <canvas id="myChart"></canvas>
-<script>
-var ctx = document.getElementById('myChart');
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['lundi', 'mardi', 'mercredi', 'jeudi','vendredi','samedi'],
-        datasets: [{
-            label: 'connexion',
-            data: [1, 2, 8, 3, 2, 9],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 153, 0, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 153, 0, 1)'
-            ],
-            borderWidth: 5
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-});
-</script>
-                    
-                </div>
-                
-            </div>
-        </div>
+                    <script>
+                        var ctx = document.getElementById('myChart');
+                        var mylineChart = new Chart(ctx, {
+                            type: 'line',
+                            data: {
+                                labels: ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi','dimanche'],
+                                datasets: [{
+                                    label: 'connexion',
+                                    data: [105, 252, 328, 103, 298, 569, 485],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 153, 0, 0.2)',
+                                        'rgba(255, 153, 0, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 153, 0, 1)',
+                                        'rgba(255, 153, 0, 1)'
+                                    ],
+                                    borderWidth: 5
+                                }]
+                            },
+                            options: { 
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero: true
+                                        }
+                                    }]
+                                }
+                            }
+                        });
+                    </script>
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Adresse mail</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Choisir un thème</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>Céréale</option>
+                                <option>Bétail</option>
+                                <option>Gasoil</option>
+                                <option>Trésorie</option>
+                                <option>Personnel</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Commentaires</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                    </form>
+                    </div>
+                        <div class="col-md-3">
+                            <img src="ressource/image/ble.jpg">
+                            
+                        </div>
+                    </div>
+                    </div>
      
         
         
