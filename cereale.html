@@ -1,73 +1,120 @@
-
 <!DOCTYPE html>
 
 <html>
+
 <head>
 
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
+    <link href="https://fonts.googleapis.com/css2?family=BenchNine:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link rel="stylesheet" href="css/cereale.css">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/cc5ec0b7b9.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../jsc/jscharting.js"></script>
+    <script type="text/javascript" src="../jsc/modules/types.js"></script>
 </head>
+
 <body>
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                
+                
+                <div class="moyenne"><h1>Prix moyen sur l'année 2019</h1></div>
+                <p class="sheat"><i class="far fa-arrow-alt-circle-down"></i>Prix du blé<br>77.66€ la tonne</p>
+                <p class="corn"><i class="far fa-arrow-alt-circle-up"></i>Prix du maïs<br>69.91€ la tonne</p>
+                <p class="tournesol"><i class="far fa-arrow-alt-circle-up"></i>Prix du tournesol<br>78.41€ la tonne</p>
+                <p class="orge"><i class="far fa-arrow-alt-circle-down"></i>Prix de l'orge<br>29.70€ la tonne</p>
+                
+               
+            </div>
+
+                <div class="col-md-8">
+                    
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+                    <canvas id="radar-chart" width="800" height="600"></canvas>
+                    <script>
+                        new Chart(document.getElementById("radar-chart"), {
+                            type: 'radar',
+                            data: {
+                                labels: ["Janvier", "février", "Mars", "Avril", "Mai","Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre"],
+                                datasets: [{
+                                    label: "blé",
+                                    fill: true,
+                                    backgroundColor: "rgba(255, 0, 0,0.2)",
+                                    borderColor: "rgba(255, 0, 0,1)",
+                                    pointBorderColor: "#fff",
+                                    pointBackgroundColor: "rgba(255, 0, 0,1)",
+                                    data: [100, 95, 52, 65, 84, 64, 85, 42, 87, 97, 86, 75]
+                                }, {
+                                    label: "maïs",
+                                    fill: true,
+                                    backgroundColor: "rgba(0, 0, 255,0.2)",
+                                    borderColor: "rgba(0, 0,255,1)",
+                                    pointBorderColor: "#fff",
+                                    pointBackgroundColor: "rgba(0, 0,255,1)",
+                                    pointBorderColor: "#fff",
+                                    data: [65, 85, 57, 95, 54, 75, 68, 95, 84, 58, 79, 86]
+                                },  {
+                                    label: "tournesol",
+                                    fill: true,
+                                    backgroundColor: "rgba(0, 255, 0, 0.2)",
+                                    borderColor: "rgba(0, 255, 0, 1)",
+                                    pointBorderColor: "#fff",
+                                    pointBackgroundColor: "rgba(0, 255, 0, 1)",
+                                    pointBorderColor: "#fff",
+                                    data: [85, 65, 95, 75, 85, 64, 59, 68, 78, 85, 97, 85]
+                                },  {
+                                    label: "orge",
+                                    fill: true,
+                                    backgroundColor: "rgba(204, 0, 153, 0.2)",
+                                    borderColor: "rgba(204, 0, 153,1)",
+                                    pointBorderColor: "#fff",
+                                    pointBackgroundColor: "rgba(204, 0, 153, 1)",
+                                    pointBorderColor: "#fff",
+                                    data: [65, 23, 54, 65, 42, 85, 42, 35, 75, 64, 32, 42]
+                                    },
+                                  ]
+                            },
+                            options: {
+                                title: {
+                                    display: true,
+                                    text: 'Prix de ventes des céréales 2019'
+                                }
+                            }
+                        });
+                    </script>
+            </div>
+
+            <div class="col-md-2">
+                
+                <img src="ressource/image/corn.jpg">
+                
+            </div>
         </div>
-        
-        
-        <div class="col-md-8">
-            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-            <canvas id="myChart"></canvas>
-                        <script>
-                          var ctx = document.getElementById('myChart');
-                          var myChart = new Chart(ctx, {
-                          type: 'radar',
-                          data: {
-                          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                          datasets: [{
-                          label: '# of Votes',
-                          data: [12, 19, 3, 5, 2, 3],
-                          backgroundColor: [
-                          'rgba(255, 99, 132, 0.2)',
-                          'rgba(54, 162, 235, 0.2)',
-                          'rgba(255, 206, 86, 0.2)',
-                          'rgba(75, 192, 192, 0.2)',
-                          'rgba(153, 102, 255, 0.2)',
-                          'rgba(255, 159, 64, 0.2)'
-                          ],
-                          borderColor: [
-                          'rgba(255, 99, 132, 1)',
-                          'rgba(54, 162, 235, 1)',
-                          'rgba(255, 206, 86, 1)',
-                          'rgba(75, 192, 192, 1)',
-                          'rgba(153, 102, 255, 1)',
-                          'rgba(255, 159, 64, 1)'
-                          ],
-                          borderWidth: 1
-                          }]
-                          },
-                          options: {
-                          scales: {
-                          yAxes: [{
-                          ticks: {
-                          beginAtZero: true
-                          }
-                          }]
-                          }
-                          }
-                          });
-                        </script>      
-        </div>
-        
-        <div class="col-md-2">
-        </div>
+
     </div>
 
-</div>
-    
-    </body>
-    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
 </html>
-    
-                

@@ -1,0 +1,96 @@
+.container{
+    max-width: inherit;
+}
+
+
+.row{
+    position: relative;
+}
+
+p{
+    display: block;
+    position: relative;
+    left: 15px;
+    top: 230px;
+    border: 1px solid ;
+    border-radius: 15px; 
+    margin: 10px 0;
+    padding: 10px;
+    width: 200px;
+    
+}
+.moyenne{
+    position: absolute;
+    left: 30px;
+    font-family: 'benchnine', sans-serif;
+    font-size: 20px;
+    width: 200px;
+    text-align: center;
+    border: 3px solid ;
+    border-radius: 15px;
+    border-color: blue;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.sheat{
+    border-color: #ff0000;
+    margin: 30px 0;
+    text-align: right;
+    
+}
+.corn{
+    border-color: #1007f5;
+    margin: 30px 0;
+     text-align: right;
+}
+
+.tournesol{
+    border-color: #07f510;
+    margin: 30px 0;
+     text-align: right;
+}
+
+.orge{
+    border-color: #f507b5;
+    margin: 30px 0;
+    text-align: right;
+}
+
+canvas{
+    border: 1px solid;
+    margin-top: 50px;
+    border-radius: 20px;
+    height: 600px !important;
+}
+
+.sheat i{
+    font-size: 200%;
+    color: red;
+    margin: 10px 50px 0 0;
+   
+}
+.orge i{
+    font-size: 200%;
+    color: red;
+    margin: 10px 30px 0 0;
+   
+}
+
+.corn i{
+    font-size: 200%;
+    color: green;
+    margin: 10px 50px 0 0;
+   
+}
+.tournesol i{
+    font-size: 200%;
+    color: green;
+    margin: 10px 10px 0 0;
+   
+}
+
+img{
+    height: 100vh;
+    position: fixed;
+}
